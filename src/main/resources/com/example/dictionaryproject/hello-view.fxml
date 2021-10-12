@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1300.0" style="-fx-background-image: url(&quot;https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/241203026_577141873606494_2503242843157473103_n.jpg?_nc_cat=109&amp;ccb=1-5&amp;_nc_sid=730e14&amp;_nc_ohc=3LSbPSBzQhYAX9favEy&amp;_nc_ht=scontent.fhan5-9.fna&amp;oh=385369ff402b4b0e6c153dbd29503c90&amp;oe=6166260F&quot;);" stylesheets="@style/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryproject.HelloController">
+    <children>
+        <AnchorPane fx:id="content" layoutX="300.0" layoutY="50.0" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: #333; -fx-background-radius: 50px;" styleClass="bgControl">
+         <children>
+            <AnchorPane prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: #333; -fx-background-radius: 50px;">
+               <children>
+                  <AnchorPane layoutX="50.0" layoutY="50.0" prefHeight="50.0" prefWidth="600.0">
+                     <children>
+                        <TextField fx:id="inputSearch" promptText="Nhập từ cần tìm" style="-fx-font-size: 16px; -fx-font-weight: 600;">
+                           <padding>
+                              <Insets bottom="12.0" left="10.0" right="300.0" top="12.0" />
+                           </padding>
+                        </TextField>
+                        <AnchorPane fx:id="submitSearch" layoutX="406.0" layoutY="4.5" prefHeight="40.0" prefWidth="75.0" style="-fx-background-color: #999; -fx-background-radius: 2px; -fx-cursor: CLOSED_HAND;">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="25.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/sreachButton.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="50.0" layoutY="150.0" prefHeight="500.0" prefWidth="850.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <ImageView fx:id="imageNotFound" fitHeight="450.0" fitWidth="600.0" layoutX="125.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/noData.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+        <AnchorPane fx:id="control" layoutX="50.0" layoutY="50.0" prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #999; -fx-background-radius: 50px;">
+            <children>
+            <HBox fx:id="bgSearch" layoutX="50.0" layoutY="50.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" styleClass="bgControl">
+               <children>
+                      <ImageView fx:id="buttonSearch" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: CLOSED_HAND;">
+                          <image>
+                              <Image url="@image/search.png" />
+                          </image>
+                      </ImageView>
+               </children></HBox>
+            <HBox fx:id="bgNote" layoutX="50.0" layoutY="216.67" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 20px;" styleClass="bgControl">
+               <children>
+                      <ImageView fx:id="buttonNote" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: CLOSED_HAND;">
+                          <image>
+                              <Image url="@image/note.png" />
+                          </image>
+                      </ImageView>
+               </children>
+            </HBox>
+            <HBox fx:id="bgGame" layoutX="50.0" layoutY="383.3" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 20px;" styleClass="bgControl">
+               <children>
+                      <ImageView fx:id="buttonGame" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: CLOSED_HAND;">
+                          <image>
+                              <Image url="@image/52761-video-game-icon.png" />
+                          </image>
+                      </ImageView>
+               </children>
+            </HBox>
+            <HBox fx:id="bgSetting" layoutX="50.0" layoutY="550.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 20px;" styleClass="bgControl">
+               <children>
+                      <ImageView fx:id="buttonSetting" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: CLOSED_HAND;">
+                          <image>
+                              <Image url="@image/setting.png" />
+                          </image>
+                      </ImageView>
+               </children>
+            </HBox>
+            </children>
+        </AnchorPane>
+      <AnchorPane layoutX="360.0" layoutY="743.0" prefHeight="50.0" prefWidth="600.0" />
+    </children>
+</AnchorPane>
