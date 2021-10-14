@@ -6,7 +6,9 @@ import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -40,7 +42,8 @@ public class Translate  {
             }
             result = new JSONObject(stringBuilder.toString());
             } catch (IOException e) {
-            e.printStackTrace();
+                e.printStackTrace();
+                return null;
             }
             return result;
         }
@@ -48,6 +51,9 @@ public class Translate  {
         public static OxfordData getOxfordData(String word) {
             OxfordData oxfordData = new OxfordData();
             JSONObject jsonObject = getOxford(word);
+            if(jsonObject == null) {
+                return null;
+            }
             JSONArray results = new JSONArray();
             results = jsonObject.getJSONArray("results");
             ArrayList<JSONArray> lexicalEntries = new ArrayList<JSONArray>();
@@ -135,21 +141,50 @@ public class Translate  {
         private  String getLanguageEnd = "vi";
         private String APIGoogleTranslate = "https://script.google.com/macros/s/AKfycbw2qKkvobro8WLNZUKi2kGwGwEO4W8cBavcKqcuCIGhGBBtVts/exec";
 
-        public String getGoogleData(String text) throws IOException {
-            String urlStr = this.APIGoogleTranslate
-                    + "?q=" + URLEncoder.encode(text, "UTF-8")
-                    + "&target=" + this.getLanguageEnd
-                    +  "&source=" + this.languageStar;
-            URL url = new URL(urlStr);
-            StringBuilder response = new StringBuilder();
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            con.setRequestProperty("User-Agent", "Mozilla/5.0");
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            String inputLine;
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
+        public String getGoogleData(String text)  {
+            String urlStr = null;
+            try {
+                urlStr = this.APIGoogleTranslate
+                        + "?q=" + URLEncoder.encode(text, "UTF-8")
+                        + "&target=" + this.getLanguageEnd
+                        +  "&source=" + this.languageStar;
+            } catch (UnsupportedEncodingException e) {
+                return null;
             }
-            in.close();
+            URL url = null;
+            try {
+                url = new URL(urlStr);
+            } catch (MalformedURLException e) {
+                return null;
+            }
+            StringBuilder response = new StringBuilder();
+            HttpURLConnection con = null;
+            try {
+                con = (HttpURLConnection) url.openConnection();
+            } catch (IOException e) {
+                return null;
+            }
+            con.setRequestProperty("User-Agent", "Mozilla/5.0");
+            BufferedReader in = null;
+            try {
+                in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            } catch (IOException e) {
+                return null;
+            }
+            String inputLine = null;
+            while (true) {
+                try {
+                    if (!((inputLine = in.readLine()) != null)) break;
+                } catch (IOException e) {
+                    return null;
+                }
+                StringBuilder append = response.append(inputLine);
+            }
+            try {
+                in.close();
+            } catch (IOException e) {
+                    return null;
+            }
             return response.toString();
         }
     }
