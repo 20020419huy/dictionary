@@ -3,8 +3,6 @@ import javafx.geometry.Insets;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-
-import java.util.AbstractList;
 import java.util.ArrayList;
 
 public class AnimationApp {

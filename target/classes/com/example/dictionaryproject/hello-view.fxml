@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Button?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1300.0" style="-fx-background-image: url(&quot;https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/241203026_577141873606494_2503242843157473103_n.jpg?_nc_cat=109&amp;ccb=1-5&amp;_nc_sid=730e14&amp;_nc_ohc=BfOs3skVYeIAX9KSqPZ&amp;tn=vevCxgaCCuICVmVC&amp;_nc_ht=scontent.fhan5-9.fna&amp;oh=dee01d8d27e583f8ee86ce733b9f253c&amp;oe=616C14CF&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryproject.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1300.0" style="-fx-background-image: url(&quot;https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/241203026_577141873606494_2503242843157473103_n.jpg?_nc_cat=109&amp;ccb=1-5&amp;_nc_sid=730e14&amp;_nc_ohc=BajmzxisacwAX9csSLo&amp;tn=vevCxgaCCuICVmVC&amp;_nc_ht=scontent.fhan5-9.fna&amp;oh=1f31a1c8745d5a4933dd45976e6a384e&amp;oe=6172038F&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryproject.HelloController">
     <children>
         <AnchorPane fx:id="content" layoutX="300.0" layoutY="50.0" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: #333; -fx-background-radius: 50px;" styleClass="bgControl">
          <children>
@@ -40,21 +40,9 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="contentNote" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: #333; -fx-background-radius: 50px; visibility: false;">
-               <children>
-                  <Button layoutX="400.0" layoutY="249.0" mnemonicParsing="false" text="content node" />
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="contentGame" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: #333; -fx-background-radius: 50px; visibility: false;">
-               <children>
-                  <Button layoutX="443.0" layoutY="222.0" mnemonicParsing="false" text="content game" />
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="contentSetting" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: #333; -fx-background-radius: 50px; visibility: false;">
-               <children>
-                  <Button layoutX="416.0" layoutY="296.0" mnemonicParsing="false" text="content setting" />
-               </children>
-            </AnchorPane>
+            <AnchorPane fx:id="contentNote" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: #333; -fx-background-radius: 50px; visibility: false;" />
+            <AnchorPane fx:id="contentGame" layoutX="50.0" layoutY="50.0" prefHeight="600.0" prefWidth="850.0" style="-fx-background-color: #333; visibility: false;" />
+            <AnchorPane fx:id="contentSetting" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: #333; -fx-background-radius: 50px; visibility: false;" />
          </children></AnchorPane>
         <AnchorPane fx:id="control" layoutX="50.0" layoutY="50.0" prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #999; -fx-background-radius: 50px;">
             <children>

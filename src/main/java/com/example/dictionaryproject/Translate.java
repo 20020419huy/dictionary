@@ -14,7 +14,6 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class Translate  {
 
     public static class Oxford {

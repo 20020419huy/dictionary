@@ -59,12 +59,18 @@ public class HelloController implements Initializable {
         this.animationApp.hoverAnimation(this.buttons);
         this.search = new Search(this.inputSearch, this.submitSearch, this.contentSearch,this.imageNotFound);
         this.search.searchSol();
+
+        //run search
+        Search search= new Search(this.inputSearch, this.submitSearch, this.contentSearch, this.imageNotFound);
+        search.init();
+        search.searchSol();
+        //run game
+        Game game = new Game(this.contentGame);
+        game.initGame();
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.init();
-        Search test = new Search(this.inputSearch, this.submitSearch, this.contentSearch, this.imageNotFound);
-        test.init();
-        test.searchSol();
+
     }
 }
